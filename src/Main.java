@@ -1,17 +1,52 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        task_1();
+        task_2();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+    }
+
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+
+    }
+
+    public static void task_1() {
+        System.out.println("Задача 1");
+        int[] arr = generateRandomArray();
+        int salaryMonth = 0;
+
+        for (int salary : arr) {
+            salaryMonth += salary;
+        }
+        System.out.println("Сумма трат за месяц составила " + salaryMonth + " рублей.");
+
+        System.out.println("Задача 2");
+
+        Arrays.sort(arr);
+        System.out.println("Минимальная сумма трат за день составила " + arr[0] + " рублей." + "Максимальная сумма трат за день составила " + arr[29] + " рублей.");
+
+        System.out.println("Задача 3");
+        double srSum = salaryMonth / arr.length;
+        System.out.println("Средняя сумма трат за месяц составила " + srSum + " рублей.");
+
+    }
+
+    public static void task_2() {
+        System.out.println("Задача 4");
+
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+
         }
     }
+
 }
